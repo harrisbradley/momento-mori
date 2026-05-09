@@ -1,0 +1,2 @@
+# momento-mori
+RIP site
