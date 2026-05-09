@@ -12,7 +12,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         port: Number(process.env.EMAIL_SERVER_PORT ?? 1025),
         auth: undefined,
       },
-      from: process.env.EMAIL_FROM ?? "noreply@memento-mori.app",
+      from: process.env.EMAIL_FROM ?? "noreply@momento-mo.rip",
     }),
   ],
   pages: {

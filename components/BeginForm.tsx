@@ -447,7 +447,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
                     borderRight: "1px solid var(--border)",
                   }}
                 >
-                  memento-mori.app/legacy/
+                  momento-mo.rip/legacy/
                 </span>
                 <input
                   type="text"
