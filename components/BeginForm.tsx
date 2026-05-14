@@ -150,6 +150,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
           return (
             <button
               key={s}
+              type="button"
               onClick={() => setStep(s)}
               className="px-6 py-3 text-xs tracking-widest uppercase transition-colors"
               style={{
@@ -201,6 +202,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
                   />
                   {identityGoals.length > 1 && (
                     <button
+                      type="button"
                       onClick={() => removeGoal(i)}
                       className="px-3 flex-shrink-0 text-lg transition-opacity hover:opacity-60"
                       style={{ color: "var(--muted)", background: "none", cursor: "pointer" }}
@@ -215,6 +217,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
 
             {identityGoals.length < 8 && (
               <button
+                type="button"
                 onClick={addGoal}
                 className="text-sm tracking-widest uppercase text-left transition-opacity hover:opacity-70"
                 style={{
@@ -232,6 +235,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
 
           <div className="mt-12 flex justify-end">
             <button
+              type="button"
               onClick={() => setStep("legacy")}
               className="px-8 py-3 text-sm tracking-widest uppercase transition-opacity hover:opacity-80"
               style={{
@@ -309,6 +313,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
                     <label style={labelStyle}>Message {i + 1}</label>
                     {messages.length > 1 && (
                       <button
+                        type="button"
                         onClick={() => removeMessage(i)}
                         className="text-sm transition-opacity hover:opacity-60"
                         style={{ color: "var(--muted)", background: "none", cursor: "pointer" }}
@@ -348,6 +353,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
             </div>
 
             <button
+              type="button"
               onClick={addMessage}
               className="mt-4 text-sm tracking-widest uppercase transition-opacity hover:opacity-70"
               style={{
@@ -364,6 +370,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
 
           <div className="mt-12 flex gap-4 justify-end">
             <button
+              type="button"
               onClick={() => setStep("identity")}
               className="px-6 py-3 text-sm tracking-widest uppercase"
               style={{
@@ -377,6 +384,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
               ← Back
             </button>
             <button
+              type="button"
               onClick={() => setStep("save")}
               className="px-8 py-3 text-sm tracking-widest uppercase transition-opacity hover:opacity-80"
               style={{
@@ -474,6 +482,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
             )}
 
             <button
+              type="button"
               onClick={handleSave}
               disabled={saving || !email.trim() || !username.trim()}
               className="w-full px-8 py-3 text-sm tracking-widest uppercase transition-opacity hover:opacity-80 disabled:opacity-40"
@@ -510,6 +519,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
               />
             </div>
             <button
+              type="button"
               onClick={handleSaveGuest}
               disabled={saving || !username.trim()}
               className="px-8 py-3 text-sm tracking-widest uppercase border transition-opacity hover:opacity-70 disabled:opacity-40"
@@ -528,6 +538,7 @@ export default function BeginForm({ onSaved }: BeginFormProps) {
 
           <div className="mt-8 flex justify-start">
             <button
+              type="button"
               onClick={() => setStep("legacy")}
               className="text-sm tracking-widest uppercase transition-opacity hover:opacity-70"
               style={{
