@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f0e0d;
+  --foreground: #e8e0d0;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --muted: #7a7060;
+  --surface: #1a1815;
+  --border: #2e2a24;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in        { animation: fadeIn 1s ease forwards; }
+.fade-in-delay  { animation: fadeIn 1s ease 0.4s forwards; opacity: 0; }
+.fade-in-delay2 { animation: fadeIn 1s ease 0.8s forwards; opacity: 0; }
+.fade-in-delay3 { animation: fadeIn 1s ease 1.2s forwards; opacity: 0; }

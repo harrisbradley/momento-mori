@@ -1,0 +1,5 @@
+{
+  "install": "npm install",
+  "build": "npx prisma migrate deploy && npm run build",
+  "start": "npm start"
+}
