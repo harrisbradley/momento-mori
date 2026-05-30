@@ -192,6 +192,23 @@ export default function LegacyView({ displayName, username, profile }: LegacyVie
         >
           Begin your own legacy →
         </Link>
+        <div className="mt-8 flex items-center justify-center gap-6">
+          <Link
+            href="/privacy"
+            className="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity"
+            style={{ color: "var(--muted)", fontFamily: "var(--font-body)" }}
+          >
+            Privacy
+          </Link>
+          <span style={{ color: "var(--border)" }}>&middot;</span>
+          <Link
+            href="/terms"
+            className="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity"
+            style={{ color: "var(--muted)", fontFamily: "var(--font-body)" }}
+          >
+            Terms
+          </Link>
+        </div>
       </footer>
     </main>
   );

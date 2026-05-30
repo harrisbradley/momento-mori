@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { auth } from "@/lib/auth";
 
 const quote = {
   text: "It is not death that a man should fear, but he should fear never beginning to live.",
   author: "Marcus Aurelius",
 };
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero */}
@@ -281,8 +283,38 @@ export default function Home() {
           </cite>
         </blockquote>
 
+        <div className="mt-12 flex items-center justify-center gap-6">
+          <Link
+            href="/privacy"
+            className="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity"
+            style={{ color: "var(--muted)", fontFamily: "var(--font-body)" }}
+          >
+            Privacy
+          </Link>
+          <span style={{ color: "var(--border)" }}>&middot;</span>
+          <Link
+            href="/terms"
+            className="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity"
+            style={{ color: "var(--muted)", fontFamily: "var(--font-body)" }}
+          >
+            Terms
+          </Link>
+          {session?.user && (
+            <>
+              <span style={{ color: "var(--border)" }}>&middot;</span>
+              <Link
+                href="/account"
+                className="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity"
+                style={{ color: "var(--muted)", fontFamily: "var(--font-body)" }}
+              >
+                My Account
+              </Link>
+            </>
+          )}
+        </div>
+
         <p
-          className="mt-12 text-xs tracking-widest uppercase"
+          className="mt-6 text-xs tracking-widest uppercase"
           style={{ color: "var(--border)", fontFamily: "var(--font-body)" }}
         >
           memento mori &mdash; remember you will die

@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { getUserByUsername, getProfileByUserId } from "@/lib/db";
 import GuestLegacyLoader from "@/components/GuestLegacyLoader";
 import LegacyView from "@/components/LegacyView";
 
@@ -17,24 +17,23 @@ export async function generateMetadata({ params }: Props) {
 export default async function LegacyPage({ params }: Props) {
   const { username } = await params;
 
-  const user = await prisma.user.findUnique({
-    where: { username },
-    include: {
-      profile: {
-        include: {
-          identityGoals: { orderBy: { order: "asc" } },
-          finalMessages: { where: { isPublic: true } },
-        },
-      },
-    },
-  });
-
-  if (!user || !user.profile || !user.profile.shareEnabled) {
+  const user = await getUserByUsername(username);
+  if (!user) {
     return <GuestLegacyLoader username={username} />;
   }
 
-  const { profile } = user;
-  const displayName = user.name ?? username;
+  const profile = await getProfileByUserId(user.id);
+  if (!profile || !profile.shareEnabled) {
+    return <GuestLegacyLoader username={username} />;
+  }
 
-  return <LegacyView displayName={displayName} username={username} profile={profile} />;
+  // Filter to only public messages
+  const publicProfile = {
+    ...profile,
+    finalMessages: profile.finalMessages.filter((m) => m.isPublic),
+  };
+
+  const displayName = (user as Record<string, unknown>).name as string | undefined ?? username;
+
+  return <LegacyView displayName={displayName} username={username} profile={publicProfile} />;
 }
