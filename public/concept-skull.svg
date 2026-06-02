@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#0F0E0D"/>
+  <!-- Skull -->
+  <path d="M256 100C190 100 150 150 150 210C150 260 170 290 200 310V360H312V310C342 290 362 260 362 210C362 150 322 100 256 100Z" fill="#C9A84C"/>
+  <!-- Eyes -->
+  <circle cx="215" cy="220" r="25" fill="#0F0E0D"/>
+  <circle cx="297" cy="220" r="25" fill="#0F0E0D"/>
+  <!-- Nose -->
+  <path d="M256 260L245 285H267L256 260Z" fill="#0F0E0D"/>
+  <!-- Teeth -->
+  <rect x="220" y="335" width="10" height="15" rx="2" fill="#0F0E0D"/>
+  <rect x="240" y="335" width="10" height="15" rx="2" fill="#0F0E0D"/>
+  <rect x="260" y="335" width="10" height="15" rx="2" fill="#0F0E0D"/>
+  <rect x="280" y="335" width="10" height="15" rx="2" fill="#0F0E0D"/>
+  <!-- Bones -->
+  <path d="M120 400L392 120M392 400L120 120" stroke="#C9A84C" stroke-width="30" stroke-linecap="round"/>
+</svg>
