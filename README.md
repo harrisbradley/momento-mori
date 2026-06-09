@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💀 Momento Mori
 
-## Getting Started
+### *Spiritual Legacy Planner and Life Reflection Tool*
 
-First, run the development server:
+> *"It is not death that a man should fear, but he should fear never beginning to live."* — Marcus Aurelius
 
+**Momento Mori** (Latin for "remember you will die") is a solemn, reflective Next.js web application designed to help users contemplate their mortality and organize their spiritual legacy. It provides a quiet, intentional space to answer two critical questions: *Who are you becoming?* and *What will you leave behind?*
+
+---
+
+## 🕊️ Key Features
+
+### 🕯️ 1. Identity & Becoming ("Who are you becoming?")
+- **Identity Commitments**: Define the values, character traits, and commitments you want to cultivate in your life before it ends. 
+- **Dynamic Prioritization**: Rank and order your character commitments as you grow.
+
+### 📜 2. Legacy & Leaving Behind ("What will you leave behind?")
+- **Final Letters & Messages**: Write private or public final letters to loved ones (e.g. spouse, children, friends).
+- **Funeral Arrangements & Wishes**: Document your funeral readings, music choices, and overall wishes so your family doesn't have to guess during a time of grief.
+- **Legacy Profiles**: Shareable public profiles (optional and passwordless/authenticated) located at `/legacy/[username]` to share your life reflections and public statements with the world.
+
+### 🔒 3. Secure & Private Authentication
+- Uses NextAuth.js for secure, passwordless authentication (magic email links) so that your private reflections and messages remain confidential.
+
+---
+
+## 🛠️ Technology Stack
+- **Framework**: Next.js 15 (React 19, App Router)
+- **Database ORM**: Prisma Client
+- **Database**: SQLite (local `dev.db` file)
+- **Auth**: NextAuth.js (Email Magic Links, Google Sign-in)
+- **Styling**: Tailwind CSS
+- **Design System**: A premium dark-monochrome palette with antique gold (`#c9a84c`) accents and typography suited for solemn contemplation.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+You will need:
+- Node.js 18 or later.
+- A SMTP email server or [Resend](https://resend.com/) key (for NextAuth magic login links).
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/harrisbradley/momento-mori.git
+cd momento-mori
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Database Migration
+Deploy the SQLite database schema using Prisma:
+```bash
+npx prisma migrate deploy
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Configure Environment
+Create a `.env` file at the root:
+```env
+DATABASE_URL="file:./dev.db"
+NEXTAUTH_SECRET="your_nextauth_secret_hash"
+NEXTAUTH_URL="http://localhost:3000"
 
-## Learn More
+# SMTP config for passwordless magic link sign-ins
+EMAIL_SERVER_HOST="smtp.example.com"
+EMAIL_SERVER_PORT=587
+EMAIL_SERVER_USER="your_smtp_user"
+EMAIL_SERVER_PASSWORD="your_smtp_password"
+EMAIL_FROM="noreply@example.com"
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 5. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 License
+For the reflection of life, the contemplation of death, and the glory of God.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
