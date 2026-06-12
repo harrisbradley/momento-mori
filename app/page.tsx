@@ -24,7 +24,7 @@ export default function Home() {
             <img
               src="/mori-logo.png"
               alt="Memento Mori Logo"
-              className="w-32 h-32 md:w-36 md:h-36 object-contain"
+              className="w-[260px] md:w-[420px] h-auto object-contain"
             />
           </div>
 
