@@ -34,3 +34,4 @@ body {
 .fade-in-delay  { animation: fadeIn 1s ease 0.4s forwards; opacity: 0; }
 .fade-in-delay2 { animation: fadeIn 1s ease 0.8s forwards; opacity: 0; }
 .fade-in-delay3 { animation: fadeIn 1s ease 1.2s forwards; opacity: 0; }
+.fade-in-logo   { animation: fadeIn 2.5s ease 1.8s forwards; opacity: 0; }

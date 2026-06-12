@@ -20,7 +20,7 @@ export default function Home() {
         />
 
         <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="fade-in mb-8 flex justify-center">
+          <div className="fade-in-logo mb-8 flex justify-center">
             <img
               src="/mori-logo.png"
               alt="Memento Mori Logo"
