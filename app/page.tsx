@@ -20,12 +20,13 @@ export default function Home() {
         />
 
         <div className="relative z-10 max-w-3xl mx-auto">
-          <p
-            className="fade-in text-xs tracking-[0.3em] uppercase mb-8"
-            style={{ color: "var(--gold)", fontFamily: "var(--font-body)" }}
-          >
-            memento mori
-          </p>
+          <div className="fade-in-logo mb-8 flex justify-center">
+            <img
+              src="/mori-logo.png"
+              alt="Memento Mori Logo"
+              className="w-[260px] md:w-[420px] h-auto object-contain"
+            />
+          </div>
 
           <h1
             className="fade-in-delay text-6xl md:text-8xl font-light leading-none mb-6"
